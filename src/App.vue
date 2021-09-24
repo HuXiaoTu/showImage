@@ -1,11 +1,15 @@
 <template>
     <div id="app">
-        <plug-in :imgList="imgList" @error="errorMessage"></plug-in>
+        <show-images
+            :imgList="imgList"
+            @error="errorMessage"
+            @cancel="cancel"
+        ></show-images>
     </div>
 </template>
 
 <script>
-import PlugIn from './components/plugin.vue';
+import ShowImages from './components/plugin.vue';
 export default {
     name: 'app',
     data() {
@@ -16,10 +20,13 @@ export default {
     methods: {
         errorMessage({ message }) {
             alert(message)
-        }
+        },
+        cancel() {
+            console.info('ws >>>> ⚡⚡ 取消显示',);
+        },
     },
     components: {
-        PlugIn,
+        ShowImages,
     }
 }
 </script>

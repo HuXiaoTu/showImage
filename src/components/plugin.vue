@@ -131,6 +131,7 @@ import gifshot from 'gifshot';
 import { Select, Option, Switch, Input } from 'element-ui';
 
 export default {
+    name: 'show-images',
     components: {
         elSelect: Select,
         elOption: Option,

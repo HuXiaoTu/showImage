@@ -1,13 +1,11 @@
 {
-  "name": "showImages",
+  "name": "show-images",
   "description": "Zoom in to see the picture and GIF",
   "version": "1.0.0",
   "author": "${wangxiaoshuai} ${13676373110@163.com}",
   "license": "MIT",
   "private": false,
   "main": "dist/showImages.js",
-  "unpkg": "dist/showImages.min.js",
-  "module": "dist/showImages.esm.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/HuXiaoTu/showImage"
@@ -20,7 +18,7 @@
     "image",
     "gif",
     "GIF",
-    "showImage",
+    "show-images",
     "showImages",
     "seeImage",
     "picture",
