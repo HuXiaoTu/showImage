@@ -36,6 +36,22 @@ module.exports = {
           'sass-loader?indentedSyntax'
         ],
       },
+      // {
+      //   test: /\.(woff|woff2|eot|ttf|otf)$/,
+      //   loader: 'url-loader',
+      //   options: {
+      //     limit: 10000,
+      //     name: '[name].[ext]'
+      //   }
+      // },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        loader: 'file-loader',
+        options: {
+          name: 'iconfont/[name].[ext]',
+          publicPath: '/dist',
+        }
+      },
       {
         test: /\.vue$/,
         loader: 'vue-loader',
@@ -53,7 +69,7 @@ module.exports = {
               'vue-style-loader',
               'css-loader',
               'sass-loader?indentedSyntax'
-            ]
+            ],
           }
           // other vue-loader options go here
         }
@@ -69,10 +85,6 @@ module.exports = {
         options: {
           name: '[name].[ext]?[hash]'
         }
-      },
-      {
-        test: /\.(woff|woff2|eot|otf|ttf)$/,
-        loader: 'file-loader',
       }
     ]
   },

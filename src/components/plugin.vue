@@ -127,6 +127,8 @@
 
 <script>
 
+import 'element-ui/lib/theme-chalk/index.css';
+import "../../css/iconfont/iconfont.css";
 import gifshot from 'gifshot';
 import { Select, Option, Switch, Input } from 'element-ui';
 
@@ -417,9 +419,6 @@ export default {
     },
 }
 </script>
-<style>
-@import "../../css/iconfont/iconfont.css";
-</style>
 <style lang="scss">
 @keyframes loadingAnimation {
     0% {

@@ -15,8 +15,8 @@
 ### 全局注册方式
 ``` JavaScript
     //main.js中引入
-    import show-images from 'show-images'
-    Vue.use(show-images)
+    import ShowImages from 'show-images'
+    Vue.use(ShowImages)
 ```
 ``` JavaScript
     //*.vue中 直接使用
@@ -61,7 +61,7 @@
         </show-images>
     </template>
     // 引入组件
-    import ShowImage from 'show-images'
+    import ShowImages from 'show-images'
     export default {
         data() {
             return {
@@ -83,7 +83,7 @@
         },
         // 注册组件
         components:{
-            ShowImage,
+            ShowImages,
         }
     }
 ```
