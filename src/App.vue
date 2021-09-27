@@ -14,7 +14,8 @@ export default {
     name: 'app',
     data() {
         return {
-            imgList: ['http://www.qxxwss.ltd:8080/a.jpg', 'http://www.qxxwss.ltd:8080/b.png', 'http://www.qxxwss.ltd:8080/c.jpg']
+            // imgList: ['http://www.qxxwss.ltd:8080/a.jpg', 'http://www.qxxwss.ltd:8080/b.png', 'http://www.qxxwss.ltd:8080/c.jpg']
+            imgList: []
         }
     },
     methods: {

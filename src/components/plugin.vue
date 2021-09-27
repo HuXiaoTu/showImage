@@ -10,12 +10,12 @@
             <div class="moreImageContBox"></div>
             <!-- 左右切换 -->
             <span
-                class="iconfont"
+                class="iconfont iconLeft"
                 :class="[form.isLoading ? 'icon-Loading' : 'icon-zuo']"
                 @click="leftOrRight('left')"
             ></span>
             <span
-                class="iconfont"
+                class="iconfont iconRight"
                 :class="[form.isLoading ? 'icon-Loading' : 'icon-you']"
                 @click="leftOrRight('right')"
             ></span>
@@ -80,7 +80,10 @@
                     <!-- 播放间隔 -->
                     <div class="moreImageBotBtnBoxJ">
                         <span>播放间隔：</span>
-                        <select v-model="form.intervalTime">
+                        <select
+                            v-model="form.intervalTime"
+                            :disabled="form.isLoading"
+                        >
                             <option
                                 v-for="i in list.intervalTimeData"
                                 :key="i"
@@ -409,15 +412,19 @@ export default {
 }
 </script>
 <style lang="scss">
-@keyframes loadingAnimation {
-    0% {
-        transform: rotate(0);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
 .moreImage {
+    @keyframes loadingAnimation {
+        0% {
+            transform: rotate(0);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+    // 动态loading
+    .icon-Loading {
+        animation: loadingAnimation 1s linear infinite;
+    }
     position: fixed;
     top: 0;
     left: 0;
@@ -448,6 +455,7 @@ export default {
             align-items: center;
             justify-content: center;
             position: relative;
+            user-select: none;
             > image {
                 display: inline-block;
             }
@@ -461,10 +469,10 @@ export default {
             display: none;
             cursor: pointer;
         }
-        .icon-zuo {
+        .iconLeft {
             left: 30px;
         }
-        .icon-you {
+        .iconRight {
             right: 30px;
         }
     }
@@ -490,6 +498,7 @@ export default {
                 .moreImageBotBtnBoxB {
                     height: 50px;
                     line-height: 50px;
+                    user-select: none;
                     .iconfont {
                         margin: 10px;
                         font-size: 30px;
@@ -507,6 +516,7 @@ export default {
                         line-height: 25px;
                         border: 1px solid #ccc;
                         border-radius: 5px;
+                        box-sizing: border-box;
                     }
                     // switch组件
                     .switch-component {
@@ -564,10 +574,7 @@ export default {
             color: #fff;
         }
     }
-    // 动态loading
-    .icon-Loading {
-        animation: loadingAnimation 1s linear infinite;
-    }
+
     // element 样式重置
     .el-select {
         height: 25px;
