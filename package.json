@@ -1,7 +1,7 @@
 {
   "name": "show-images",
   "description": "Zoom in to see the picture and GIF",
-  "version": "1.0.0-beta6",
+  "version": "1.0.0-beta7",
   "author": "${wangxiaoshuai} ${13676373110@163.com}",
   "license": "MIT",
   "private": false,
@@ -26,7 +26,6 @@
     "View big picture"
   ],
   "dependencies": {
-    "element-ui": "^2.15.6",
     "gifshot": "^0.4.5",
     "vue": "^2.5.11"
   },

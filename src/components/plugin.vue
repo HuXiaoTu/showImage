@@ -80,40 +80,39 @@
                     <!-- 播放间隔 -->
                     <div class="moreImageBotBtnBoxJ">
                         <span>播放间隔：</span>
-                        <el-select
-                            v-model="form.intervalTime"
-                            style="width: 100px"
-                            :disabled="form.isLoading"
-                        >
-                            <el-option
+                        <select v-model="form.intervalTime">
+                            <option
                                 v-for="i in list.intervalTimeData"
                                 :key="i"
-                                :label="i + 's'"
                                 :value="i"
-                            ></el-option>
-                        </el-select>
+                            >
+                                {{ i + "s" }}
+                            </option>
+                        </select>
                     </div>
                     <!-- 是否重复播放 -->
                     <div class="moreImageBotBtnBoxJ">
                         <span>重复播放：</span>
-                        <el-switch
+                        <input
+                            class="switch-component"
+                            type="checkbox"
                             v-model="form.isRepeat"
-                            size="mini"
                             :disabled="form.isLoading"
-                        ></el-switch>
+                        />
                     </div>
                     <!-- 跳转至 -->
                     <div class="moreImageBotBtnBoxJ">
                         <span>跳转至：</span>
-                        <el-input
+                        <input
                             v-model="form.jumpNumber"
                             size="mini"
                             placeholder="number"
+                            class="jumpInput"
                             type="number"
                             style="width: 55px"
                             @blur="jumpNumber"
                             :disabled="form.isLoading"
-                        ></el-input>
+                        />
                     </div>
                 </div>
             </div>
@@ -126,20 +125,10 @@
 </template>
 
 <script>
-
-import 'element-ui/lib/theme-chalk/index.css';
 import "../../css/iconfont/iconfont.css";
 import gifshot from 'gifshot';
-import { Select, Option, Switch, Input } from 'element-ui';
-
 export default {
     name: 'show-images',
-    components: {
-        elSelect: Select,
-        elOption: Option,
-        elSwitch: Switch,
-        elInput: Input,
-    },
     props: {
         // 展示图片列表
         imgList: {
@@ -511,6 +500,48 @@ export default {
                     display: flex;
                     align-items: center;
                     margin-left: 5px;
+                    > select,
+                    .jumpInput {
+                        outline: none;
+                        height: 25px;
+                        line-height: 25px;
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                    }
+                    // switch组件
+                    .switch-component {
+                        position: relative;
+                        width: 40px;
+                        height: 20px;
+                        background-color: #dadada;
+                        border-radius: 20px;
+                        border: none;
+                        outline: none;
+                        -webkit-appearance: none;
+                        transition: all 0.2s ease;
+                        border: 1px solid #ccc;
+                        cursor: pointer;
+                    }
+                    // 按钮
+                    .switch-component::after {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 50%;
+                        height: 100%;
+                        background-color: #fff;
+                        border-radius: 50%;
+                        transition: all 0.2s ease;
+                    }
+                    // checked状态时，背景颜色改变
+                    .switch-component:checked {
+                        background-color: #86c0fa;
+                    }
+                    // checked状态时，按钮位置改变
+                    .switch-component:checked::after {
+                        left: 50%;
+                    }
                 }
             }
         }
