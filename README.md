@@ -5,8 +5,8 @@
 
 > 欢迎留言沟通: 13676373110@163.com
 
-<!-- ## demo演示 -->
-<!-- ![](http://www.qxxwss.cn/frame-selection.gif) -->
+## demo演示
+![](http://qxxwss.ltd:8080/showImage.gif)
 
 ## 使用
 
@@ -121,3 +121,6 @@ GitHub项目地址[https://github.com/HuXiaoTu/showImage](https://github.com/HuX
 ```js
     └─components    // 组件开发区域
 ```
+
+#### V1.1.0 版本内容更新
+1. 修复图标不显示问题,修复加载报错问题

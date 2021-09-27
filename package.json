@@ -1,7 +1,7 @@
 {
   "name": "show-images",
   "description": "Zoom in to see the picture and GIF",
-  "version": "1.0.0-beta8",
+  "version": "1.1.0",
   "author": "${wangxiaoshuai} ${13676373110@163.com}",
   "license": "MIT",
   "private": false,
